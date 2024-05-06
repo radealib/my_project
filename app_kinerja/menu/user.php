@@ -11,7 +11,7 @@
       </a>
     </li>
     <li class="nav-item menu-open">
-      <a href="#" class="nav-link active">
+      <a href="#" class="nav-link">
         <i class="nav-icon fas fa-users"></i>
         <p>
           Kinerja
@@ -657,3 +657,13 @@
           </li> -->
   </ul>
 </nav>
+<script>
+  var url = window.location;
+  const allLinks = document.querySelectorAll('.nav-item a');
+  const currentLink = [...allLinks].filter(e => {
+    return e.href == url;
+  });
+  currentLink[0].classList.add("active")
+  currentLink[0].closest(".nav-treeview").style.display = "block";
+  currentLink[0].closest(".has-treeview").classList.add("active");
+</script>
